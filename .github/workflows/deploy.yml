@@ -4,6 +4,10 @@ on:
   push:
     branches: [ main ]
 
+# 关键：添加以下权限配置
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -19,4 +23,4 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # 如果是 Vite 项目，输出目录是 dist
+          folder: dist # 如果是 Vite 项目通常是 dist，如果是 CRA 则是 build
