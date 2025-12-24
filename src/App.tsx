@@ -175,6 +175,7 @@ export default function App() {
     setCatChoice(null);
     setCatMessage("喵呜...让我想想...");
     setIsAiTalking(true);
+    speak(userTarget.name);
 
     let ticks = 0;
     intervalRef.current = setInterval(() => {
